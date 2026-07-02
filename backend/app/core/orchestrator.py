@@ -5,22 +5,23 @@ Receives user commands and routes them to the appropriate agent.
 """
 
 from app.core.registry import AgentRegistry
+from app.logger import logger
 
 
 class Orchestrator:
 
     def __init__(self):
-        print("🚀 AnuragOS Orchestrator initialized")
+        logger.info("AnuragOS Orchestrator initialized")
         self.registry = AgentRegistry()
 
     def execute(self, command: str):
 
-        print(f"\nReceived command: {command}")
+        logger.info(f"Received command: {command}")
 
         agent = self.registry.get_agent(command)
 
         if agent:
-            print(f"Selected Agent: {agent.__class__.__name__}")
+            logger.info(f"Selected Agent: {agent.__class__.__name__}")
             agent.start()
         else:
-            print("❌ No suitable agent found.")
+            logger.warning("No suitable agent found.")

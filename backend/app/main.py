@@ -1,11 +1,25 @@
+import sys
+
 from app.core.orchestrator import Orchestrator
 
 
 def main():
 
-    orchestrator = Orchestrator()
+    if len(sys.argv) < 2:
+        print("Usage:")
+        print('uv run python -m app.main "Your Command"')
+        return
 
-    orchestrator.execute("Start AI Workspace")
+    command = " ".join(sys.argv[1:])
+
+    if command.lower() == "help":
+        print("\nAvailable Commands:")
+        print("-------------------")
+        print("Start AI Workspace")
+        return
+
+    orchestrator = Orchestrator()
+    orchestrator.execute(command)
 
 
 if __name__ == "__main__":
