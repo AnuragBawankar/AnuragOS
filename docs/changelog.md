@@ -4,6 +4,17 @@
 
 ### Added
 
+- Installable CLI entry point (`anuragos`)
+- Python packaging using Hatchling
+
+### Changed
+
+- Project is now executable through `uv run anuragos`
+
+## Unreleased
+
+### Added
+
 - Command-line argument support
 - `help` command
 - Centralized logging
