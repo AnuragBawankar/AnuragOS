@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-04
+
+### Added
+- Professional CLI using argparse.
+- Support for CLI subcommands.
+- Initial `workspace` command.
+- New `app/cli` package for command handlers.
+
+### Changed
+- Replaced manual command parsing with argparse.
+- Refactored CLI architecture to support one file per command.
+
+### Removed
+- Legacy `commands.py` implementation.
+
 ## Unreleased
 
 ### Added
